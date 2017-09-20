@@ -7,16 +7,16 @@ import CompCard from './CompCard'
 class SearchResult extends Component {
   render () {
     return (
-      <div>
-        <h4>Search Result</h4>
-        <Row>
-          {this.props.results.map((card, i) => (
-            <Col m={4}>
-              <CompCard card={card} />
-            </Col>
-          ))}
-        </Row>
-      </div>
+      <Row>
+        <Col m={12}>
+          <h5>Search Result</h5>
+        </Col>
+        {this.props.results.map((card, i) => (
+          <Col m={4}>
+            <CompCard key={i} card={card} />
+          </Col>
+        ))}
+      </Row>
     )
   }
 }

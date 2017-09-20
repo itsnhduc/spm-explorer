@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Row, Col } from 'react-materialize'
 import Front from './Front'
 import SearchForm from './SearchForm'
 import SearchResult from './SearchResult'
@@ -28,7 +28,11 @@ class Search extends Component {
     return (
       <div>
         <SearchForm change={this.search.bind(this)} />
-        {this.state.query.length > 0 ? <SearchResult results={this.state.results} /> : <Front />}
+        <Row>
+          <Col l={10} m={12} offset="l1 m0">
+            {this.state.query.length > 0 ? <SearchResult results={this.state.results} /> : <Front />}
+          </Col>
+        </Row>
       </div>
     )
   }
