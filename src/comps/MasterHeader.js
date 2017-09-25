@@ -6,7 +6,7 @@ class MasterHeader extends Component {
     return (
       <div className="MasterHeader">
         <Navbar brand='&nbsp;SPM Explorer' right>
-          <NavItem href='/'>Search</NavItem>          
+          <NavItem href='/'>Search</NavItem>
           <NavItem href='/get-started'>Getting started</NavItem>
           <NavItem href='/contact'>Contact Us</NavItem>
         </Navbar>

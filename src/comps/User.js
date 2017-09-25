@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Row, Col } from 'react-materialize'
 import CardListing from './CardListing'
 import Jumbo from './Jumbo'
 
@@ -23,7 +24,11 @@ class User extends Component {
         <Jumbo>
           <h2>{this.props.match.params.name}</h2>
         </Jumbo>
-        <CardListing title="Published packages" cards={this.state.pkgs} />
+        <Row>
+          <Col l={10} m={12} offset="l1 m0">
+            <CardListing title="Published packages" cards={this.state.pkgs} />
+          </Col>
+        </Row>
       </div>
     )
   }
