@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Row, Col } from 'react-materialize'
+import { Row, Col, Input } from 'react-materialize'
 import Front from './Front'
-import SearchForm from './SearchForm'
-import SearchResult from './SearchResult'
+import Jumbo from './Jumbo'
+import CardListing from './CardListing'
 
 class Search extends Component {
   constructor () {
@@ -27,10 +27,12 @@ class Search extends Component {
   render () {
     return (
       <div>
-        <SearchForm change={this.search.bind(this)} />
+        <Jumbo>
+          <Input s={12} label='Search for packages' onChange={(event, query) => this.search(query)} />
+        </Jumbo>
         <Row>
           <Col l={10} m={12} offset="l1 m0">
-            {this.state.query.length > 0 ? <SearchResult results={this.state.results} /> : <Front />}
+            {this.state.query.length > 0 ? <CardListing title="Search Results" cards={this.state.results} /> : <Front />}
           </Col>
         </Row>
       </div>

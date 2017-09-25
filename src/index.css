@@ -9,8 +9,9 @@ h5 {
 }
 
 .jumbo {
-  background-image: url("/img/bg.jpg");
+  background-image: url("/img/bg.png");
   background-size: cover;
+  height: 25vh;
 }
 
 .card-action button {
@@ -20,4 +21,10 @@ h5 {
 
 .card-action .row {
   margin-bottom: 0;
+}
+
+nav {
+  background: transparent;
+  position: absolute;
+  box-shadow: none;
 }
