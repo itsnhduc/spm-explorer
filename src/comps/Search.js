@@ -31,8 +31,8 @@ class Search extends Component {
           <Input s={12} label='Search for packages' onChange={(event, query) => this.search(query)} />
         </Jumbo>
         <Row>
-          <Col l={10} m={12} offset="l1 m0">
-            {this.state.query.length > 0 ? <CardListing title="Search Results" cards={this.state.results} /> : <Front />}
+          <Col l={10} m={12} offset='l1 m0'>
+            {this.state.query.length > 0 ? <CardListing title='Search Results' cards={this.state.results} /> : <Front />}
           </Col>
         </Row>
       </div>
