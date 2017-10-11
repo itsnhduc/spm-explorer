@@ -11,6 +11,7 @@ class MasterHeader extends Component {
           <NavItem href='/most/installs'>Most Installs</NavItem>
           <NavItem href='/most/recent'>Most Recent</NavItem>
           <NavItem href='/contact'>Contact Us</NavItem>
+          <NavItem href='/getting-started'>Getting Started</NavItem>
         </Navbar>
       </div>
     )

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, Card, Button, Icon } from 'react-materialize'
+import { Row, Col, Card, Button, Icon, ProgressBar } from 'react-materialize'
 import clipboard from 'clipboard-js'
 import ReactMarkdown from 'react-markdown'
 import Jumbo from './Jumbo'
@@ -9,7 +9,7 @@ class Package extends Component {
     super()
     this.state = {
       pkg: [],
-      readme: 'Loading README content...'
+      readme: ''
     }
   }
 
@@ -42,21 +42,10 @@ class Package extends Component {
           <h4>by <a href={'/user/' + this.state.pkg.author}><strong>{this.state.pkg.author}</strong></a></h4>
         </Jumbo>
         <Row>
-          <Col l={10} m={12} offset="l1 m0">
+          <Col l={10} m={12} offset='l1 m0'>
             <Row>
-              <Col l={3} m={12}>
-                <Card className="pkg-left-info" actions={[(
-                  <Row>
-                    <Col m={6}>
-                      <a href={this.state.pkg.tarball_url}>
-                        <Button waves='light'>{this.state.pkg.install_count}<Icon left>file_download</Icon></Button>
-                      </a>
-                    </Col>
-                    <Col m={6}>
-                      <Button waves='light'>{this.state.pkg.star_count}<Icon left>star</Icon></Button>
-                    </Col>
-                  </Row>
-                )]}>
+              <Col l={4} m={12}>
+                <Card className='pkg-left-info'>
                   <section>
                     <h5>Version</h5>
                     <p>{this.state.pkg.version}</p>
@@ -66,7 +55,7 @@ class Package extends Component {
                     <pre>
                       <code>
                         $ spm install {this.state.pkg.name ? this.state.pkg.name.replace('spm-pkg-', '') : ''}
-                        <a className="copy-anchor" href="#" onClick={this.copyCmd.bind(this)}>Copy</a>
+                        <a className='copy-anchor' href='#' onClick={this.copyCmd.bind(this)}>Copy</a>
                       </code>
                     </pre>
                   </section>
@@ -74,12 +63,23 @@ class Package extends Component {
                     <h5>Description</h5>
                     <p>{this.state.pkg.description}</p>
                   </section>
+                  <section>
+                    <h5>Documentation</h5>
+                    <a href={this.state.pkg.docs_url} target='_blank'>
+                      <Button waves='light'>Go to documentation <Icon right>open_in_new</Icon></Button>
+                    </a>
+                  </section>
+                  <section>
+                    <h5>Actions</h5>
+                    <a href={this.state.pkg.tarball_url}>
+                      <Button waves='light'>Download ({this.state.pkg.install_count})</Button>
+                    </a>&nbsp;
+                    <Button waves='light'>Star ({this.state.pkg.star_count})</Button>
+                  </section>
                 </Card>
               </Col>
-              <Col l={9} m={12}>
-                <Card>
-                  <ReactMarkdown source={this.state.readme}/>
-                </Card>
+              <Col l={8} m={12}>
+                <Card>{this.state.readme.length ? <ReactMarkdown source={this.state.readme}/> : <ProgressBar />}</Card>
               </Col>
             </Row>
             
