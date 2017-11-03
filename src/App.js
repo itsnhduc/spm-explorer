@@ -5,7 +5,6 @@ import MasterHeader from './comps/MasterHeader'
 import MasterFooter from './comps/MasterFooter'
 import Package from './comps/Package'
 import User from './comps/User'
-import StatListing from './comps/StatListing'
 import GettingStarted from './comps/GettingStarted'
 
 class App extends Component {
@@ -16,7 +15,6 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Search} />
-            <Route path="/most/:stat" component={StatListing} />
             <Route path="/package/:name" component={Package} />
             <Route path="/user/:name" component={User} />
             <Route path="/getting-started" component={GettingStarted} />

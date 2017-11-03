@@ -15,7 +15,7 @@ class Search extends Component {
 
   search (query) {
     this.setState({ query }, () => {
-      const fetchUrl = 'http://localhost:3000/api/spmpackages?filter[limit]=10&filter[where][name][regexp]=spm-pkg-' + query
+      const fetchUrl = 'http://localhost:3000/api/pkgs?limit=5&name=' + query
       fetch(fetchUrl)
         .then(res => res.json())
         .then(pkgs => {

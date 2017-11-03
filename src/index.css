@@ -30,7 +30,7 @@ nav {
 }
 
 /* .pkg-left-info code { */
-pre code {
+pre code.bordered {
   border: 1px solid grey;
   padding: 10px;
   background-color: rgba(255,255,255,0.5);

@@ -35,38 +35,63 @@ class GettingStarted extends Component {
                 </Row>
               </section>
               <section>
-                <h4>Initializing SPM</h4>
-                <pre><code>$ spm init</code></pre>
-              </section>
-              <section>
-                <h4>Package actions</h4>
-                <h5>Syntax</h5>
-                <pre><code>$ spm [action] [package]</code></pre>
-                <h5>Actions</h5>
+                <h4>Management Files and Directories</h4>
                 <Table>
                   <thead>
                     <tr>
                       <th>Name</th>
+                      <th>Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><pre><code>{'spm.json'}</code></pre></td>
+                      <td>File</td>
+                      <td>Record installed dependencies' name and version</td>
+                    </tr>
+                    <tr>
+                      <td><pre><code>{'.spm'}</code></pre></td>
+                      <td>Directory</td>
+                      <td>Store installed dependencies</td>
+                    </tr>
+                  </tbody>
+                </Table>
+              </section>
+              <section>
+                <h4>Usage</h4>
+                <Table>
+                  <thead>
+                    <tr>
+                      <th>Command</th>
                       <th>Description</th>
                     </tr>
                   </thead>
 
                   <tbody>
                     <tr>
-                      <td>add</td>
-                      <td>Add a package with the specified name</td>
+                      <td><pre><code>{'$ spm init'}</code></pre></td>
+                      <td>Initialize SPM</td>
                     </tr>
                     <tr>
-                      <td>remove</td>
-                      <td>Remove an installed package with the specified name</td>
+                      <td><pre><code>{'$ spm add'}</code></pre></td>
+                      <td>Install all packages listed in spm.json</td>
                     </tr>
                     <tr>
-                      <td>star</td>
-                      <td>Add a star to an installed package with the specified name</td>
+                      <td><pre><code>{'$ spm add <name>[@<version>]'}</code></pre></td>
+                      <td>Install a new package and add to spm.json</td>
                     </tr>
                     <tr>
-                      <td>search</td>
-                      <td>Search for a package with the specified name</td>
+                      <td><pre><code>{'$ spm remove <name>'}</code></pre></td>
+                      <td>Remove a package listed in spm.json</td>
+                    </tr>
+                    <tr>
+                      <td><pre><code>{'$ spm find [--author] <name>'}</code></pre></td>
+                      <td>Find packages</td>
+                    </tr>
+                    <tr>
+                      <td><pre><code>{'$ spm list'}</code></pre></td>
+                      <td>List all packages in spm.json</td>
                     </tr>
                   </tbody>
                 </Table>

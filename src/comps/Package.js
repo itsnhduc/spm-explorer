@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, Card, Button, Icon, ProgressBar } from 'react-materialize'
+import { Row, Col, Card, Button, Icon, ProgressBar, Collection, CollectionItem } from 'react-materialize'
 import clipboard from 'clipboard-js'
 import ReactMarkdown from 'react-markdown'
 import Jumbo from './Jumbo'
@@ -14,7 +14,7 @@ class Package extends Component {
   }
 
   componentDidMount () {
-    const pkgInfoUrl = 'http://localhost:3000/api/spmpackages?filter[where][name]=' + this.props.match.params.name
+    const pkgInfoUrl = 'http://localhost:3000/api/pkgs?name=' + this.props.match.params.name
     fetch(pkgInfoUrl)
       .then(res => res.json())
       .then(pkgs => {
@@ -47,14 +47,16 @@ class Package extends Component {
               <Col l={4} m={12}>
                 <Card className='pkg-left-info'>
                   <section>
-                    <h5>Version</h5>
-                    <p>{this.state.pkg.version}</p>
+                    <h5>Versions</h5>
+                    <Collection>
+                      {this.state.pkg.commits && this.state.pkg.commits.map(c => <CollectionItem key={c.version}>{c.version}</CollectionItem>)}
+                    </Collection>
                   </section>
                   <section>
                     <h5>Standard Installation</h5>
-                    <pre>
+                    <pre className='bordered'>
                       <code>
-                        $ spm install {this.state.pkg.name ? this.state.pkg.name.replace('spm-pkg-', '') : ''}
+                        $ spm install {this.state.pkg.name ? this.state.pkg.name.replace('spm-pkg-', '') : ''}[@&lt;version&gt;]
                         <a className='copy-anchor' href='#' onClick={this.copyCmd.bind(this)}>Copy</a>
                       </code>
                     </pre>
@@ -73,8 +75,7 @@ class Package extends Component {
                     <h5>Actions</h5>
                     <a href={this.state.pkg.tarball_url}>
                       <Button waves='light'>Download ({this.state.pkg.install_count})</Button>
-                    </a>&nbsp;
-                    <Button waves='light'>Star ({this.state.pkg.star_count})</Button>
+                    </a>
                   </section>
                 </Card>
               </Col>

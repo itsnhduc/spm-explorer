@@ -15,7 +15,7 @@ class Front extends Component {
       }
     }
 
-    const fetchUrl = 'http://localhost:3000/api/spmpackages?filter[limit]=5&filter[order]='
+    const fetchUrl = 'http://localhost:3000/api/pkgs?limit=5&order='
     const fetchInfo = {
       'Most Stars': 'star_count',
       'Most Installs': 'install_count',
@@ -23,7 +23,7 @@ class Front extends Component {
     }
 
     Object.keys(fetchInfo).forEach(name => {
-      fetch(fetchUrl + fetchInfo[name] + ' DESC')
+      fetch(fetchUrl + fetchInfo[name] + '&order_type=desc')
         .then(res => res.json())
         .then(pkgs => {
           this.setState({

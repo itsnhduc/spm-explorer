@@ -9,8 +9,10 @@ class User extends Component {
     this.state = {
       pkgs: []
     }
+  }
 
-    const fetchUrl = 'http://localhost:3000/api/spmpackages?filter[where][author]=itsnhduc'
+  componentDidMount () {
+    const fetchUrl = 'http://localhost:3000/api/pkgs?author=' + this.props.match.params.name
     fetch(fetchUrl)
       .then(res => res.json())
       .then(pkgs => {
