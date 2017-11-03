@@ -6,6 +6,7 @@ import MasterFooter from './comps/MasterFooter'
 import Package from './comps/Package'
 import User from './comps/User'
 import GettingStarted from './comps/GettingStarted'
+import ContactUs from './comps/ContactUs'
 
 class App extends Component {
   render () {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/package/:name" component={Package} />
             <Route path="/user/:name" component={User} />
             <Route path="/getting-started" component={GettingStarted} />
+            <Route path="/contact" component={ContactUs} />
           </Switch>
         </BrowserRouter>
         <MasterFooter />
