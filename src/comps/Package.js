@@ -49,7 +49,7 @@ class Package extends Component {
                   <section>
                     <h5>Versions</h5>
                     <Collection>
-                      {this.state.pkg.commits && this.state.pkg.commits.map(c => <CollectionItem key={c.version}>{c.version}</CollectionItem>)}
+                      {this.state.pkg.commits && this.state.pkg.commits.map(c => <CollectionItem key={c.version}>{c.version}<Icon left>chevron_right</Icon></CollectionItem>)}
                     </Collection>
                   </section>
                   <section>

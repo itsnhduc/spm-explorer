@@ -37,16 +37,11 @@ class Front extends Component {
   }
   render () {
     const secKeys = Object.keys(this.state.sections)
-    const secUrl = {
-      'Most Stars': '/most/stars',
-      'Most Installs': '/most/installs',
-      'Most Recent': '/most/recent'
-    }
     return (
       <Row>
         {secKeys.map(sectionName => (
           <Col l={12 / secKeys.length} m={12} s={12} key={sectionName}>
-            <h5><a href={secUrl[sectionName]}>{sectionName}</a></h5>
+            <h5>{sectionName}</h5>
             {this.state.sections[sectionName].map((card, i) => <CompCard key={i} card={card} />)}
           </Col>
         ))}

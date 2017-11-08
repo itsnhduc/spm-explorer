@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, Input } from 'react-materialize'
+import debounce from 'debounce'
 import Front from './Front'
 import Jumbo from './Jumbo'
 import CardListing from './CardListing'
@@ -11,11 +12,12 @@ class Search extends Component {
       query: '',
       results: []
     }
+    this.search = debounce(this.search, 300)
   }
 
   search (query) {
     this.setState({ query }, () => {
-      const fetchUrl = 'http://localhost:3000/api/pkgs?limit=5&name=' + query
+      const fetchUrl = 'http://localhost:3000/api/pkgs?limit=5&name_regex=' + query
       fetch(fetchUrl)
         .then(res => res.json())
         .then(pkgs => {

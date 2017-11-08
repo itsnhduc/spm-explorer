@@ -13,15 +13,17 @@ class App extends Component {
     return (
       <div className='App'>
         <MasterHeader />
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={Search} />
-            <Route path="/package/:name" component={Package} />
-            <Route path="/user/:name" component={User} />
-            <Route path="/getting-started" component={GettingStarted} />
-            <Route path="/contact" component={ContactUs} />
-          </Switch>
-        </BrowserRouter>
+        <main>
+          <BrowserRouter>
+            <Switch>
+              <Route exact path='/' component={Search} />
+              <Route path='/package/:name' component={Package} />
+              <Route path='/user/:name' component={User} />
+              <Route path='/getting-started' component={GettingStarted} />
+              <Route path='/contact' component={ContactUs} />
+            </Switch>
+          </BrowserRouter>
+        </main>
         <MasterFooter />
       </div>
     )

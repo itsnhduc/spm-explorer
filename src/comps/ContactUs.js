@@ -16,8 +16,8 @@ class ContactUs extends Component {
                 <Col m={6} s={12}>
                   <h4>Submit a Feedback</h4>
                   <Row>
-                    <Input type='text' s={12} label='Title' />
-                    <Input type='textarea' s={12} label='Content' />
+                    <Input type='text' s={12} label='Title' required />
+                    <Input type='textarea' s={12} label='Content' required />
                     <Button type='submit' waves='light'>Submit</Button>
                   </Row>
                 </Col>
