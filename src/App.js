@@ -7,6 +7,7 @@ import Package from './comps/Package'
 import User from './comps/User'
 import GettingStarted from './comps/GettingStarted'
 import ContactUs from './comps/ContactUs'
+import './App.css'
 
 class App extends Component {
   render () {

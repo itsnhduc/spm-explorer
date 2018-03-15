@@ -1,0 +1,4 @@
+main > div > .row:last-child {
+  background-color: #E1E1E1;
+  padding-top: 10px;
+}

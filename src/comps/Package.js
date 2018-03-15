@@ -3,6 +3,7 @@ import { Row, Col, Card, Button, Icon, ProgressBar, Collection, CollectionItem }
 import clipboard from 'clipboard-js'
 import ReactMarkdown from 'react-markdown'
 import Jumbo from './Jumbo'
+import './Package.css'
 
 class Package extends Component {
   constructor () {
@@ -74,7 +75,7 @@ class Package extends Component {
                   <section>
                     <h5>Actions</h5>
                     <a href={this.state.pkg.tarball_url}>
-                      <Button waves='light'>Download ({this.state.pkg.install_count})</Button>
+                      <Button waves='light'>Download Latest ({this.state.pkg.install_count})</Button>
                     </a>
                   </section>
                 </Card>
@@ -83,7 +84,6 @@ class Package extends Component {
                 <Card>{this.state.readme.length ? <ReactMarkdown source={this.state.readme}/> : <ProgressBar />}</Card>
               </Col>
             </Row>
-            
           </Col>
         </Row>
       </div>
