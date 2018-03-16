@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
 import { Card } from 'react-materialize'
+import './CompCard.css'
 
 class CompCard extends Component {
   render () {

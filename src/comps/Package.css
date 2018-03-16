@@ -1,7 +1,7 @@
 pre.bordered code {
   border: 1px solid grey;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #31373F;
   border-radius: 5px;
   line-height: 3;
 }
@@ -10,4 +10,13 @@ pre.bordered code {
   margin-left: 10px;
   padding-left: 10px;
   border-left: 1px solid grey;
+}
+
+.collection {
+  border: none;
+}
+
+.collection .collection-item {
+  background-color: #31373F;
+  border-color: #414852;
 }

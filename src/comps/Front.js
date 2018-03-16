@@ -41,7 +41,7 @@ class Front extends Component {
       <Row>
         {secKeys.map(sectionName => (
           <Col l={12 / secKeys.length} m={12} s={12} key={sectionName}>
-            <h5>{sectionName}</h5>
+            <h4>{sectionName}</h4>
             {this.state.sections[sectionName].map((card, i) => <CompCard key={i} card={card} />)}
           </Col>
         ))}

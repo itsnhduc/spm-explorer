@@ -7,7 +7,7 @@ class GettingStarted extends Component {
   render () {
     const downloadInfo = {
       win: { name: 'Windows', icon: 'windows', link: '#' },
-      mac: { name: 'macOS', icon: 'apple', link: '#' },
+      mac: { name: 'Mac OS', icon: 'apple', link: '#' },
       linux: { name: 'Linux', icon: 'linux', link: '#' },
     }
 
@@ -27,7 +27,7 @@ class GettingStarted extends Component {
                       <a href={downloadInfo[platform].link}>
                         <Card>
                           <FontAwesome name={downloadInfo[platform].icon} size='3x' />
-                          <h5>{downloadInfo[platform].name}</h5>
+                          <h3>{downloadInfo[platform].name}</h3>
                         </Card>
                       </a>
                     </Col>

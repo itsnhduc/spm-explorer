@@ -1,6 +1,7 @@
 .jumbo {
   background-image: url("/img/bg.png");
   background-size: cover;
-  height: 25vh;
+  height: 300px;
   margin-bottom: 0;
+  padding-top: 72px;
 }

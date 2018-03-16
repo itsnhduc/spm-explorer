@@ -7,7 +7,7 @@ class CardListing extends Component {
     return (
       <div>
         <div>
-          <h5>{this.props.title}</h5>
+          <h4>{this.props.title}</h4>
           {this.props.cards.length ? '' : 'No packages found'}
         </div>
         <Row>

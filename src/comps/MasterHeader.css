@@ -1,5 +1,35 @@
 nav {
-  background: transparent;
+  background: #fff;
   position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 95%;
+  height: 72px;
   box-shadow: none;
+}
+
+nav #nav-mobile {
+  display: none;
+}
+
+nav ul a, nav .brand-logo {
+  color: #24272A;
+  font-weight: bold;
+  padding-top: 4px;
+}
+
+nav ul a {
+  font-size: large;
+  border-left: 0.1px solid #ddd;
+}
+
+nav ul a:hover {
+  background-color: initial;
+  color: #8CBA11;
+  border-bottom: 4px solid #8CBA11;
+}
+
+nav .brand-logo {
+  padding-left: 15px;
 }

@@ -1,4 +1,22 @@
-main > div > .row:last-child {
-  background-color: #E1E1E1;
+@import url('http://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.ttf');
+main {
+  color: #fff;
+}
+
+main>div>.row:last-child {
+  background-color: #171E24;
   padding-top: 10px;
+  margin-top: 20px;
+}
+
+a {
+  color: #8CBA11;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'BigNoodleToo', Impact, sans-serif;
+}
+
+h4, h5, h6 {
+  font-style: italic;
 }
