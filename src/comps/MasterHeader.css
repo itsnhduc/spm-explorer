@@ -1,12 +1,20 @@
 nav {
   background: #fff;
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 50%;
   transform: translate(-50%, 0);
   width: 95%;
   height: 72px;
   box-shadow: none;
+  z-index: 100;
+}
+
+nav.fixed {
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translate(0, 0);
 }
 
 nav #nav-mobile {
