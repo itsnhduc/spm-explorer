@@ -15,7 +15,7 @@ class MasterHeader extends Component {
       <div className='MasterHeader'>
         <Navbar brand='&nbsp;SPM Explorer' right>
           {items.map(i => {
-            const isActive = window.location.pathname.slice(1) === i.href
+            const isActive = window.location.pathname.split('/')[1] === i.href
             return (
               <NavItem key={i.key} href={'/' + i.href} className={isActive ? 'active' : ''}>
                 {i.key}

@@ -39,6 +39,8 @@ nav ul li.active a {
 }
 
 nav .brand-logo {
+  font-family: 'BigNoodleToo', Impact, sans-serif;
+  font-size: 50px;
   padding-left: 15px;
 }
 
