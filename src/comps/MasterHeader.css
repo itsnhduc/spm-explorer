@@ -30,6 +30,19 @@ nav ul a:hover {
   border-bottom: 4px solid #8CBA11;
 }
 
+nav ul li.active {
+  background-color: initial;
+}
+
+nav ul li.active a {
+  border-bottom: 4px solid #8CBA11;
+}
+
 nav .brand-logo {
+  padding-left: 15px;
+}
+
+nav .brand-logo:hover {
+  color: #8CBA11;
   padding-left: 15px;
 }

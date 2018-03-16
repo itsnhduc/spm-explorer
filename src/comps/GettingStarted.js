@@ -8,7 +8,7 @@ class GettingStarted extends Component {
     const downloadInfo = {
       win: { name: 'Windows', icon: 'windows', link: '#' },
       mac: { name: 'Mac OS', icon: 'apple', link: '#' },
-      linux: { name: 'Linux', icon: 'linux', link: '#' },
+      linux: { name: 'Linux', icon: 'linux', link: '#' }
     }
 
     return (
