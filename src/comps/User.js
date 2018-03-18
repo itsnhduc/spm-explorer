@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Row, Col } from 'react-materialize'
 import CardListing from './CardListing'
 import Jumbo from './Jumbo'
+import { getApiUri } from '../helpers'
 
 class User extends Component {
   constructor () {
@@ -12,7 +13,7 @@ class User extends Component {
   }
 
   componentDidMount () {
-    const fetchUrl = 'http://localhost:3000/api/pkgs?author=' + this.props.match.params.name
+    const fetchUrl = getApiUri() + '?author=' + this.props.match.params.name
     fetch(fetchUrl)
       .then(res => res.json())
       .then(pkgs => {

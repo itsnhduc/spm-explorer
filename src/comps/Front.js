@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-
 import { Row, Col } from 'react-materialize'
-
 import CompCard from './CompCard'
+import { getApiUri } from '../helpers'
 
 class Front extends Component {
   constructor () {
@@ -15,7 +14,7 @@ class Front extends Component {
       }
     }
 
-    const fetchUrl = 'http://localhost:3000/api/pkgs?limit=5&order='
+    const fetchUrl = getApiUri() + '?limit=5&order='
     const fetchInfo = {
       'Most Stars': 'star_count',
       'Most Installs': 'install_count',

@@ -3,6 +3,7 @@ import { Row, Col, Card, Button, Icon, ProgressBar, Collection, CollectionItem }
 import clipboard from 'clipboard-js'
 import ReactMarkdown from 'react-markdown'
 import Jumbo from './Jumbo'
+import { getApiUri } from '../helpers'
 import './Package.css'
 
 class Package extends Component {
@@ -15,7 +16,7 @@ class Package extends Component {
   }
 
   componentDidMount () {
-    const pkgInfoUrl = 'http://localhost:3000/api/pkgs?name=' + this.props.match.params.name
+    const pkgInfoUrl = getApiUri() + '?name=' + this.props.match.params.name
     fetch(pkgInfoUrl)
       .then(res => res.json())
       .then(pkgs => {

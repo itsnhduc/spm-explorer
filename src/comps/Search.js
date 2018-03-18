@@ -5,6 +5,7 @@ import simpleQueryString from 'simple-query-string'
 import Front from './Front'
 import Jumbo from './Jumbo'
 import CardListing from './CardListing'
+import { getApiUri } from '../helpers'
 
 const ALL_LANG_VAL = 'All'
 const LIMIT_OPTIONS = [5, 10, 15]
@@ -23,7 +24,7 @@ class Search extends Component {
   }
 
   componentDidMount () {
-    const fetchLangUrl = 'http://localhost:3000/api/pkgs/attr/language'
+    const fetchLangUrl = getApiUri() + '/attr/language'
     fetch(fetchLangUrl)
       .then(res => res.json())
       .then(allLang => {
@@ -59,7 +60,7 @@ class Search extends Component {
           limit: this.state.lim,
           language: this.state.lang !== ALL_LANG_VAL ? this.state.lang : undefined
         })
-        const fetchUrl = 'http://localhost:3000/api/pkgs?' + queries
+        const fetchUrl = getApiUri() + '?' + queries
         fetch(fetchUrl)
           .then(res => res.json())
           .then(pkgs => {
