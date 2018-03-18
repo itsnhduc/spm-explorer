@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Input } from 'react-materialize'
 import debounce from 'debounce'
-import QueryString from 'query-string'
+import simpleQueryString from 'simple-query-string'
 import Front from './Front'
 import Jumbo from './Jumbo'
 import CardListing from './CardListing'
@@ -54,7 +54,7 @@ class Search extends Component {
   search (query) {
     this.setState({ query }, () => {
       if (query.length > 0) {
-        const queries = QueryString.stringify({
+        const queries = simpleQueryString.stringify({
           name_regex: query,
           limit: this.state.lim,
           language: this.state.lang !== ALL_LANG_VAL ? this.state.lang : undefined
